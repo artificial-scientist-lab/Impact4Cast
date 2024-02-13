@@ -3,7 +3,7 @@
 ![Paper Availability](https://img.shields.io/badge/paper-available-green)
 ![GitHub last commit](https://img.shields.io/github/last-commit/artificial-scientist-lab/Impact4Cast)
 
-<img src="miscellaneous/art_work.png" alt="workflow" width="750"/>
+<img src="miscellaneous/art_work.png" alt="workflow" width="550"/>
 
 ## Forecasting high-impact research topics via machine learning on evolving knowledge graphs
  [**Xuemei Gu**](mailto:xuemei.gu@mpl.mpg.de), [**Mario Krenn**](mailto:mario.krenn@mpl.mpg.de)

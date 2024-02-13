@@ -1,0 +1,30 @@
+
+Edge_Num=1; Clique_Size=2: [9487, 31451]
+Concept: ['cancer cell', 'renewable energy']
+
+Edge_Num=5157; Clique_Size=3: [27432, 36378, 16049]
+Concept: ['sars cov', 'dilated convolution', 'hilbert space']
+
+Edge_Num=28004; Clique_Size=4: [2059, 7077, 16049, 983]
+Concept: ['bibliometric analysis', 'qr code', 'hilbert space', 'transformer model']
+
+Edge_Num=44966; Clique_Size=5: [3498, 9487, 117, 17403, 4220]
+Concept: ['digital economy', 'cancer cell', 'deep deterministic policy gradient', 'quantum circuit', 'convolutional operation']
+
+Edge_Num=80296; Clique_Size=6: [18558, 29197, 9487, 9237, 16049, 9705]
+Concept: ['decoding module', 'classical deep learning', 'cancer cell', 'monte carlo dropout', 'hilbert space', 'bayesian optimisation']
+
+Edge_Num=96995; Clique_Size=7: [9237, 29197, 9487, 9561, 18558, 16049, 9705]
+Concept: ['monte carlo dropout', 'classical deep learning', 'cancer cell', 'bidirectional gated recurrent unit', 'decoding module', 'hilbert space', 'bayesian optimisation']
+
+Edge_Num=1; Clique_Size=2: [9487, 31451]
+Concept: ['cancer cell', 'renewable energy']
+
+Edge_Num=5157; Clique_Size=3: [27432, 36378, 16049]
+Concept: ['sars cov', 'dilated convolution', 'hilbert space']
+
+Edge_Num=28004; Clique_Size=4: [2059, 7077, 16049, 983]
+Concept: ['bibliometric analysis', 'qr code', 'hilbert space', 'transformer model']
+
+Edge_Num=44966; Clique_Size=5: [3498, 9487, 117, 17403, 4220]
+Concept: ['digital economy', 'cancer cell', 'deep deterministic policy gradient', 'quantum circuit', 'convolutional operation']

@@ -31,8 +31,20 @@
 - `get_concept_pairs.py`
 - `merge_concept_pairs.py`
 - `process_edge_to_pandas_frame.py`
+<img src="miscellaneous/Create_KnowledgeGraph.png" alt="workflow" width="300"/>
+
  
 ## <a name="ff">3. Prepare other data and utils files</a>
+`prepare_adjacency_pagerank`
+
+`prepare_unconnected_pair_solution.ipynb`
+
+`general_utils.py`
+  
+`features_utils.py`
+
+`preprocess_utils.py`
+  
 **get_dynamic_concepts**: [/get_dynamic_concepts/](/get_dynamic_concepts/)
 - `get_concept_citation.py`
 - `merge_concept_citation.py`
@@ -41,16 +53,6 @@
 **prepare_eval_data**: [/prepare_eval_data/](/prepare_eval_data/)
   - `prepare_eval_feature_data.py`
   - `prepare_eval_feature_data_condition.py`
-  
--**`prepare_adjacency_pagerank`** 
-
--**`prepare_unconnected_pair_solution.ipynb`**
-
-- `general_utils.py`
-  
-- `features_utils.py`
-
-- `preprocess_utils.py`
 
 
 ## <a name="ff">4. Forecasting with Neural Network </a>

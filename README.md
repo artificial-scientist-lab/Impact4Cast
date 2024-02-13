@@ -4,7 +4,7 @@
 ![Code Size](https://img.shields.io/github/languages/code-size/artificial-scientist-lab/Impact4Cast)
 ![Repo Size](https://img.shields.io/github/repo-size/artificial-scientist-lab/Impact4Cast)
  
-<img src="miscellaneous/art_work.png" alt="workflow" width="500"/>
+<img src="miscellaneous/art_work.png" alt="workflow" width="800"/>
 
 
 

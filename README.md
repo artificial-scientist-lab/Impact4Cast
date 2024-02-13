@@ -1,12 +1,13 @@
-# Impact4Cast: Forecasting High-Impact Research Ideas
+# Impact4Cast: Forecasting High-Impact Research Topics
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Paper Availability](https://img.shields.io/badge/paper-unavailable-gray)
+![Paper Availability](https://img.shields.io/badge/paper-available-green)
 ![Code Size](https://img.shields.io/github/languages/code-size/artificial-scientist-lab/Impact4Cast)
 ![Repo Size](https://img.shields.io/github/repo-size/artificial-scientist-lab/Impact4Cast)
+ 
+<img src="miscellaneous/art_work.png" alt="workflow" width="500"/>
 
 
-## The knowledge graph
-<img src="miscellaneous/Create_KnowledgeGraph.png" alt="workflow" width="700"/>
+
 
 ### Features
 #### There are in total 141 features:

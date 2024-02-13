@@ -1,5 +1,7 @@
 # Impact4Cast
-## Files
+
+## The knowledge graph
+<img src="miscellaneous/Create_KnowledgeGraph.png" alt="workflow" width="700"/>
 
 ### Features
 #### There are in total 141 features:

@@ -1,5 +1,8 @@
 # Impact4Cast
 
+Forecasting High-Impact Research Ideas Using a Knowledge Graph and Neural Networks
+Xuemei Gu, Mario Krenn
+
 ## The knowledge graph
 <img src="miscellaneous/Create_KnowledgeGraph.png" alt="workflow" width="700"/>
 

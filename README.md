@@ -1,5 +1,7 @@
-# Impact4Cast
-
+# Impact4Cast: Forecasting High-Impact Research Ideas Using a Knowledge Graph and Neural Networks
+![Paper Availability](https://img.shields.io/badge/paper-unavailable-gray)
+![Code Size](https://img.shields.io/github/languages/code-size/artificial-scientist-lab/Impact4Cast)
+![Repo Size](https://img.shields.io/github/repo-size/artificial-scientist-lab/Impact4Cast)
 
 
 ## The knowledge graph

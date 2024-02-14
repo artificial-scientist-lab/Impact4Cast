@@ -11,7 +11,7 @@
 
 _**Which scientific concepts, that have never been investigated jointly, will lead to the most impactful research?**_
 
-<img src="miscellaneous/art_work.png" alt="workflow" width="550"/>
+<img src="miscellaneous/Impact4Cast.png" alt="workflow" width="700"/>
 
 
 

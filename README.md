@@ -8,17 +8,16 @@
 \
 **Preprint:** [arXiv:2402.08640](https://arxiv.org/abs/2402.08640)
 
+
+_**Which scientific concepts, that have never been investigated jointly, will lead to the most impactful research?**_
+
 <img src="miscellaneous/art_work.png" alt="workflow" width="550"/>
 
-
-### Which scientific concepts, that have never been investigated jointly, will lead to the most impactful research?
-
-Here we show how to predict the impact of onsets of ideas that have never been published by researchers. For that, we developed a large evolving knowledge graph built from more than 21 million scientific papers. It combines a semantic network created from the content of the papers and an impact network created from the historic citations of papers. Using machine learning, we can predict the dynamic of the evolving network into the future with high accuracy, and thereby the impact of new research directions. We envision that the ability to predict the impact of new ideas will be a crucial component of future artificial muses that can inspire new impactful and interesting scientific ideas.
 
 
 
 ## <a name="ff">Prepare an evolving, citation-augmented knowledge graph</a>
-<img src="miscellaneous/KnowledgeGraph.png" alt="workflow" width="700"/>
+
 
 ### <a name="ff">1. Creating a list of scientific concepts</a>
 **create_concept**: [/create_concept/](/create_concept/)
@@ -37,6 +36,8 @@ Here we show how to predict the impact of onsets of ideas that have never been p
   - `s4_improve_concepts.ipynb`: Further improve concept lists
   - `s5_improve_manually_concepts.py`: Further improve concept lists
   - `full_domain_concepts.txt`: Final list of 37,960 concepts (represent vertices of knowledge graph)
+
+<img src="miscellaneous/KnowledgeGraph.png" alt="workflow" width="700"/>
  
 ### <a name="ff">2. Creating dynamic knowlegde graph</a>
 **create_dynamic_edges**: [/create_dynamic_edges/](/create_dynamic_edges/)

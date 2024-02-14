@@ -46,7 +46,7 @@ _**Which scientific concepts, that have never been investigated jointly, will le
 - `process_edge_to_pandas_frame.py`: Post-processing
 
  
-## <a name="ff"> Utils Files and Prepare other data</a>
+## <a name="ff">Prepare other data</a>
 - `prepare_adjacency_pagerank.py`: Prepare dynamic knowledge graph and compute properties.
 - `prepare_unconnected_pair_solution.ipynb`: Find unconnected concept pairs (for training, testing and evaluating)
   

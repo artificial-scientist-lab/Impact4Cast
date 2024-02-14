@@ -2,7 +2,6 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Paper Availability](https://img.shields.io/badge/paper-available-green)
-![GitHub last commit](https://img.shields.io/github/last-commit/artificial-scientist-lab/Impact4Cast)
 
 **Authors:** [**Xuemei Gu**](mailto:xuemei.gu@mpl.mpg.de), [**Mario Krenn**](https://mpl.mpg.de/research-at-mpl/independent-research-groups/krenn-research-group/)
 \

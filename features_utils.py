@@ -17,13 +17,19 @@ from itertools import combinations
 NUM_OF_VERTICES=37960   ## number of vertices in the graph
 
 def get_adjacency_matrix(full_graph, year, data_file):
+    """
+    Prepare the adjacency matrix of a knowledge graph up to year (set as y-12-31)
     
+    full_graph: the full knowledge graph stored in pandas
+    year: cut-off year, set as date(year,12,31)
+    data_file: store the adjacency matrix
+    """ 
+
     start_time=time.time()
-    
     if os.path.exists(data_file):
         with gzip.open(data_file, "rb") as f:
             adjacency_matrix=pickle.load(f)
-        #print(f"{datetime.now()}: Done {year}, read adj_mat; {time.time() - start_time}s")    
+        print(f"{datetime.now()}: Done {year}, read adjacency_matrix; {time.time() - start_time}s")    
     else:
         
         day_origin = date(1990,1,1)
@@ -38,21 +44,20 @@ def get_adjacency_matrix(full_graph, year, data_file):
         with gzip.open(data_file, "wb") as f:
             pickle.dump(adjacency_matrix, f)
             
-        #print(f"Done year: {year}; num of nodes: {adjacency_matrix.shape[0]}; num of edges: {adjacency_matrix.sum()/2}; {time.time() - start_time}s")
+        print(f"Done year: {year}; num of nodes: {adjacency_matrix.shape[0]}; num of edges: {adjacency_matrix.sum()/2}; {time.time() - start_time}s")
 
     return adjacency_matrix
 
 
 
-def get_pagerank_score(adjacency_matrix, year, store_folder):
+def get_pagerank_score(adjacency_matrix, data_file):
     
-    data_file=os.path.join(store_folder,f"pagerank_score_{year}.gz")
-    #print(f"{datetime.now()}: start loading pagerank_score files")
+    print(f"{datetime.now()}: getting the pagerank score")
     if os.path.exists(data_file):
         start_time=time.time()
         with gzip.open(data_file, "rb") as f:
             pagerank_score=pickle.load(f)  
-        #print(f"{datetime.now()}: Done, loading pagerank_score; {time.time() - start_time}s")
+        print(f"{datetime.now()}: Done, loading pagerank_score; {time.time() - start_time}s")
 
     else: ## roughly 5-6mins
         start_time=time.time()
@@ -66,7 +71,7 @@ def get_pagerank_score(adjacency_matrix, year, store_folder):
 
         with gzip.open(data_file, "wb") as f:
             pickle.dump(pagerank_score, f)
-        #print(f"{datetime.now()}: done pagerank_score; {time.time() - start_time}s")
+        print(f"{datetime.now()}: done pagerank_score; {time.time() - start_time}s")
         
     return pagerank_score
 
@@ -78,13 +83,13 @@ def get_node_neighbor(adjacency_matrix: sparse.csr_matrix):
     return [adjacency_matrix.getrow(i).indices for i in range(NUM_OF_VERTICES)] #adjacency_matrix.shape[0]
 
 
-# get the number of connected neighbors for each node and its rankdata
+# get the number of connected neighbors for each node 
 def get_num_neighbor(adjacency_matrix: sparse.csr_matrix):
     
     num_neighbor = np.array(adjacency_matrix.sum(axis=0)).flatten() # array 
-    rank_num_neighbor=rankdata(num_neighbor)
+    #rank_num_neighbor=rankdata(num_neighbor)
  
-    return num_neighbor, rank_num_neighbor
+    return num_neighbor
 
 
 # get the num of shared neighbors for one vertex pair
@@ -103,21 +108,25 @@ def get_all_node_feature(adjacency_matrix_list, year, data_folder):
     
     adjacency_matrix0, adjacency_matrix1, adjacency_matrix2 = adjacency_matrix_list
     
-    num_neighbors0, ranknum_neighbors0 = get_num_neighbor(adjacency_matrix0)
-    num_neighbors1, ranknum_neighbors1 = get_num_neighbor(adjacency_matrix1)
-    num_neighbors2, ranknum_neighbors2 = get_num_neighbor(adjacency_matrix2)
+    num_neighbors0 = get_num_neighbor(adjacency_matrix0)
+    num_neighbors1 = get_num_neighbor(adjacency_matrix1)
+    num_neighbors2 = get_num_neighbor(adjacency_matrix2)
     
     num_diff_1_year = num_neighbors0 - num_neighbors1
     num_diff_2_year = num_neighbors0 - num_neighbors2
     ranknum_diff_1_year = rankdata(num_diff_1_year)
     ranknum_diff_2_year = rankdata(num_diff_2_year)
     
-    pagerank_s0 = get_pagerank_score(adjacency_matrix0, year, data_folder)
-    pagerank_s1 = get_pagerank_score(adjacency_matrix1, year-1, data_folder)
-    pagerank_s2 = get_pagerank_score(adjacency_matrix2, year-2, data_folder)
+    data_file=os.path.join(data_folder,f"pagerank_score_{year}.gz") 
+    pagerank_s0 = get_pagerank_score(adjacency_matrix0, data_file)
+
+    data_file=os.path.join(data_folder,f"pagerank_score_{year-1}.gz") 
+    pagerank_s1 = get_pagerank_score(adjacency_matrix1, data_file)
+
+    data_file=os.path.join(data_folder,f"pagerank_score_{year-2}.gz") 
+    pagerank_s2 = get_pagerank_score(adjacency_matrix2, data_file)
 
     # Collecting all arrays in a list and stacking them at the end
-    #ranknum_neighbors0, ranknum_neighbors1, ranknum_neighbors2,
     all_features = [num_neighbors0, num_neighbors1, num_neighbors2,
                     num_diff_1_year, num_diff_2_year,
                     ranknum_diff_1_year, ranknum_diff_2_year,

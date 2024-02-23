@@ -63,7 +63,7 @@ if __name__ == '__main__':
     num_neighbor_list=[]
     for yy in [year_start,year_start-1,year_start-2]:
         data_file=os.path.join(feature_folder, f"adjacency_matrix_{yy}.gz")
-        adj_mat=get_adjacency_matrix(full_dynamic_graph, year_start, data_file)
+        adj_mat=get_adjacency_matrix(full_dynamic_graph, yy, data_file)
         adj_mat_sparse.append(adj_mat)
 
         curr_node_neighbor=get_node_neighbor(adj_mat)

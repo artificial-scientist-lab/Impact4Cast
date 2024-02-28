@@ -14,6 +14,7 @@ _**Which scientific concepts, that have never been investigated jointly, will le
 
 
 
+Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)  
 
 ## <a name="ff">Prepare an evolving, citation-augmented knowledge graph</a>
 

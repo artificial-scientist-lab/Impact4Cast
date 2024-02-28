@@ -76,16 +76,6 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
 ├── train_model_2019_individual_feature.py: Training neural network from 2016 -> 2019 (evaluated form 2019 -> 2022) on individual features
 └── train_model_2022_run.py: Training 2019 -> 2022 (for real future predictions of 2025)
 </pre>
-
-
-### <a name="ff">Search Cliques </a>
-<pre>
-<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/search_cliques">search_cliques</a>
-├── get_max_feature_for_norm_run.py: Calculating and normalizing the features of the entire knowledge graph.
-├── nn_prediation_cliques_run.py: Neural-Network-based forecast of citation range for entire knowledge graph.
-├── search_cliques.py: Search for cliques of predicted high-impact concepts.
-└── result_clique_T0_IR_010.txt: Output of search.
-</pre>
  
     
 

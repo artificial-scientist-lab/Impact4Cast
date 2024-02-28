@@ -7,16 +7,6 @@ import json
 import os
 
 
-# Create a local directory for the filtered files
-local_base_folder = 'openalex_workdata_filtered'
-os.makedirs(local_base_folder, exist_ok=True)
-
-# check whether a logs folder exists
-logs_path = 'logs'
-if not os.path.exists(logs_path):
-    os.makedirs(logs_path)
-    
-    
 
 # Function to filter the JSON objects by the desired keys
 def filter_json_objects(json_obj, journal_paper, journal_paper_with_abstract):
@@ -30,11 +20,18 @@ def filter_json_objects(json_obj, journal_paper, journal_paper_with_abstract):
                 return {key: json_obj[key] for key in desired_keys}, journal_paper, journal_paper_with_abstract
     return None, journal_paper, journal_paper_with_abstract
 
-
+# check whether a logs folder exists
+logs_path = 'logs'
+if not os.path.exists(logs_path):
+    os.makedirs(logs_path)
+    
+   
 
 journal_paper = 0
 journal_paper_with_abstract = 0
-
+# Create a local directory for the filtered files
+local_base_folder = 'openalex_workdata_filtered'
+os.makedirs(local_base_folder, exist_ok=True)
 # Configure the S3 client for anonymous access
 s3 = boto3.client('s3', config=Config(signature_version=UNSIGNED))
 
@@ -42,7 +39,8 @@ s3 = boto3.client('s3', config=Config(signature_version=UNSIGNED))
 paginator = s3.get_paginator('list_objects_v2')
 
 # Specify the S3 bucket and prefix (folder) as an example here
-process_folder=['updated_date=2023-03-27','updated_date=2023-03-28']
+# change the folder files such that one can do parallel computing with many run code files
+process_folder=['updated_date=2023-03-27','updated_date=2023-03-28'] # just an example
 
 bucket_name = 'openalex'
 prefix ='data/works/'

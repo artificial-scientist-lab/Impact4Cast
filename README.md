@@ -40,7 +40,6 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
 
 <pre>
 <a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_dynamic_edges">create_dynamic_edges</a>
-│
 ├── _get_openalex_workdata.py: Get metadata from <a href="https://openalex.org/">OpenAlex</a>)
 ├── _get_openalex_workdata_parallel_run1.py: Get parts of the metadata from OpenAlex (run in many parts)
 ├── get_concept_pairs.py: Create edges of the knowledge graph (edges carry the time and citation information).
@@ -50,27 +49,25 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
 <img src="miscellaneous/KnowledgeGraph.png" alt="workflow" width="800"/>
 
 
-## <a name="ff">Prepare other data</a>
+### <a name="ff">Prepare other data</a>
 <pre>
 .
 ├── prepare_unconnected_pair_solution.ipynb: Find unconnected concept pairs (for training, testing and evaluating)
 ├── prepare_adjacency_pagerank.py: Prepare dynamic knowledge graph and compute properties
 │
 ├──<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_dynamic_concepts">create_dynamic_concepts</a>
-│  │
 │  ├── get_concept_citation.py: Create dynamic concepts from the knowledge graph (concepts carry the time and citation information). 
-│  ├── merge_concept_citation.py: Combining edges files
+│  ├── merge_concept_citation.py: Combining dynamic concepts files
 │  └── process_concept_to_pandas_frame.py: Post-processing, store the full dynamic concepts
-│  ├── merge_concept_pairs.py: Combining edges files
-│  └── process_edge_to_pandas_frame.py: Post-processing, store the full dynamic knowledge graph
+│  ├── merge_concept_pairs.py: Combining dynamic concepts
+│  └── process_edge_to_pandas_frame.py: Post-processing, store the full dynamic concepts
 │
 └──<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/prepare_eval_data">prepare_eval_data</a>
-   │
    ├── prepare_eval_feature_data.py: Prepare features of knowledge graph (for evaluation dataset)
    └── prepare_eval_feature_data_condition.py: Prepare features of knowledge graph (for evaluation dataset, conditioned on existence in the future)
 </pre>
 
-## <a name="ff">Forecasting with Neural Network </a>
+### <a name="ff">Forecasting with Neural Network </a>
 <img src="miscellaneous/Fig2_NeuralNet.png" alt="workflow" width="800"/>
 <pre>
 .
@@ -80,7 +77,8 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
 └── train_model_2022_run.py: Training 2019 -> 2022 (for real future predictions of 2025)
 </pre>
 
-## <a name="ff">Search Cliques </a>
+
+### <a name="ff">Search Cliques </a>
 <pre>
 <a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/search_cliques">search_cliques</a>
 ├── get_max_feature_for_norm_run.py: Calculating and normalizing the features of the entire knowledge graph.

@@ -83,8 +83,8 @@ with open(logs_file_name+".txt", "a") as myfile:
 
 ###----- prepare features -----###
 time_start = time.time()
-data_folder="data_concept_graph"
-graph_file=os.path.join(data_folder,"full_dynamic_graph.parquet")
+data_folder="data_concept_graph" # folder that stores the full knowledge graph
+graph_file=os.path.join(data_folder,"full_dynamic_graph.parquet") # load the full knowledge graph 
 full_dynamic_graph = pd.read_parquet(graph_file)
 print(f"{datetime.now()}: Done, read full_dynamic_graph: {len(full_dynamic_graph)}; elapsed_time: {time.time() - time_start}")
 with open(logs_file_name+".txt", "a") as myfile:

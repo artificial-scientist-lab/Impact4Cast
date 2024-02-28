@@ -58,22 +58,13 @@ with open(logs_file_name+".txt", "a") as myfile:
 
 
 
-store_eval_folder="data_eval"
+store_eval_folder="data_eval" # store folder
 if not os.path.exists(store_eval_folder):
     os.makedirs(store_eval_folder)
 print(f"store files in {store_eval_folder}.....")
 
-    
+###----- store eval_data_pair_solution -----###     
 time_start = time.time()
-#data_eval_pair_solutions=eval_data_pair_solution.values
-#store_name=os.path.join(store_eval_folder,"eval_data_pair_solution.gz")
-#with gzip.open(store_name, "wb") as f:
-    #pickle.dump(data_eval_pair_solutions, f)
-    
-#with open(logs_file_name+".txt", "a") as myfile:
-    #myfile.write(f"\neval_data_pair_solution: {len(data_eval_pair_solutions)}; elapsed_time: {time.time() - time_start}")
-
-
 store_name=os.path.join(store_eval_folder,"eval_data_pair_solution_condition.parquet")
 eval_data_pair_solution.to_parquet(store_name, compression='gzip')
 print(f"eval_data_pair_solution: {len(eval_data_pair_solution)}; elapsed_time: {time.time() - time_start}")
@@ -81,21 +72,15 @@ with open(logs_file_name+".txt", "a") as myfile:
     myfile.write(f"\neval_data_pair_solution: {len(eval_data_pair_solution)}; elapsed_time: {time.time() - time_start}")
 
 
+###----- prepare features -----###
 time_start = time.time()
-data_folder="data_concept_graph"
-graph_file=os.path.join(data_folder,"full_dynamic_graph.parquet")
+data_folder="data_concept_graph" # folder that stores the full knowledge graph
+graph_file=os.path.join(data_folder,"full_dynamic_graph.parquet") # load the full knowledge graph 
 full_dynamic_graph = pd.read_parquet(graph_file)
 print(f"{datetime.now()}: Done, read full_dynamic_graph: {len(full_dynamic_graph)}; elapsed_time: {time.time() - time_start}")
 with open(logs_file_name+".txt", "a") as myfile:
     myfile.write(f"\n{datetime.now()}: Done, read full_dynamic_graph: {len(full_dynamic_graph)}; elapsed_time: {time.time() - time_start}")
 
-
-    
-day_origin = date(1990,1,1)
-vertex_degree_cutoff=1
-years_delta=3
-min_edges=1
-year_start=2022-years_delta
 
 start_time=time.time()
 adj_mat_sparse=[]
@@ -103,7 +88,7 @@ node_neighbor_list=[]
 num_neighbor_list=[]
 for yy in [year_start,year_start-1,year_start-2]:
     data_file=os.path.join("data_for_features", f"adjacency_matrix_{yy}.gz")
-    adj_mat=get_adjacency_matrix(full_dynamic_graph, year_start, data_file)
+    adj_mat=get_adjacency_matrix(full_dynamic_graph, yy, data_file)
     adj_mat_sparse.append(adj_mat)
     
     curr_node_neighbor=get_node_neighbor(adj_mat)
@@ -154,14 +139,13 @@ with open(logs_file_name+".txt", "a") as myfile:
     myfile.write(f"\nfinish; {len(eval_data_features)}; time: {time.time()-time_start}")
     
 
-
+###----- store eval_data_pair_feature -----### 
 time_start = time.time()
 store_name=os.path.join(store_eval_folder,"eval_data_pair_feature_condition.parquet")
 data_eval_2022 = pd.DataFrame(eval_data_features)
  
 # Convert column names to string
 data_eval_2022.columns = data_eval_2022.columns.astype(str)
-
 data_eval_2022.to_parquet(store_name, compression='gzip')  
 
 print(f"store data_eval_2022: {len(data_eval_2022)}; elapsed_time: {time.time() - time_start}")
@@ -169,14 +153,3 @@ with open(logs_file_name+".txt", "a") as myfile:
     myfile.write(f"\nstore data_eval_2022: {len(data_eval_2022)}; elapsed_time: {time.time() - time_start}")
     myfile.write(f"\n\n{datetime.now()}: {time.time() - time_start_begin}")
     
-
-#time_start = time.time()
-#store_name=os.path.join(store_eval_folder,"eval_data_pair_feature.gz")
-#with gzip.open(store_name, "wb") as f:
-    #pickle.dump(eval_data_features, f)
-#print(f"store eval_data_features.gz: {len(eval_data_features)}; elapsed_time: {time.time() - time_start}")
-#with open(logs_file_name+".txt", "a") as myfile:
-    #myfile.write(f"\nstore eval_data_features.gz: {len(eval_data_features)}; elapsed_time: {time.time() - time_start}")
-    #myfile.write(f"\n\n{datetime.now()}: {time.time() - time_start_begin}")
-    
- 

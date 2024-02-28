@@ -204,9 +204,9 @@ def get_all_node_cfeature(node_cfeature_list):
     indices_to_process = list(range(1,node_cfeature0.shape[1]))
     for index in indices_to_process:
         # Extract columns from each numpy array
-        feature0 = node_cfeature0[:, index]
-        feature1 = node_cfeature1[:, index]
-        feature2 = node_cfeature2[:, index]
+        feature0 = node_cfeature0[:, index] # current year such as 2016
+        feature1 = node_cfeature1[:, index] # 1 year prior to y, 2015
+        feature2 = node_cfeature2[:, index] # 2 years prior to y, 2014
         
         all_features.extend([feature0, feature1, feature2])
             
@@ -238,7 +238,7 @@ def get_all_node_cfeature(node_cfeature_list):
 
 # get the citation feature for each pair
 def get_pair_cfeature(data_cparameters, vertex_list):
-     
+ 
     # 1: c2016 2: ct_2016 3: ct_delta 4: num 5: c2016_m 6: ct_2016_m 7: ct_delta_m
     curr_num_c, num_total_c, num_delta_c, num_cdegree, curr_num_cm, num_total_cm, num_delta_cm=data_cparameters
     
@@ -250,8 +250,10 @@ def get_pair_cfeature(data_cparameters, vertex_list):
         v1, v2 = int(curr_v[0]), int(curr_v[1])
         features = []
         if num_cdegree[v1] or num_cdegree[v2]:
-            features.extend([(curr_num_c[v1] + curr_num_c[v2]) / (num_cdegree[v1] + num_cdegree[v2]),
+            features.extend([(curr_num_c[v1] + curr_num_c[v2]) / (num_cdegree[v1] + num_cdegree[v2]), 
                              (curr_num_c[v1] * curr_num_c[v2]) / (num_cdegree[v1] + num_cdegree[v2])])
+            #the ratio of the sum of citations received by concepts v1 and v2 in the year y to the sum of number of papers mentioning either concept
+            #the ratio of the product of citations received by concepts v1 and v2 in the year y to the sum of number of papers mentioning either concept
         else:
             features.extend([0, 0])
 
@@ -259,7 +261,11 @@ def get_pair_cfeature(data_cparameters, vertex_list):
                          num_total_cm[v1] + num_total_cm[v2],
                          num_delta_c[v1] + num_delta_c[v2],
                          num_delta_cm[v1] + num_delta_cm[v2]])
-        
+        # the sum of the average citations received by concepts v1 and v2 in the year y.
+        # the sum of the average total citations received by concepts v1 and v2 from their first publication up to the year y.
+        # the sum of the citations received by concepts v1 and v2 in the three-year period ending with year y
+        # the sum of the average citations received by concepts v1 and v2 in the three-year period ending with year y
+
         features.extend([min(curr_num_c[v1], curr_num_c[v2]),
                          max(curr_num_c[v1], curr_num_c[v2]),
                          min(num_total_c[v1], num_total_c[v2]),
@@ -269,6 +275,14 @@ def get_pair_cfeature(data_cparameters, vertex_list):
                          min(num_cdegree[v1], num_cdegree[v2]),
                          max(num_cdegree[v1], num_cdegree[v2]),
                         ])
+        # the minimum number of the citations received by either concept v1 or v2 in the year y
+        # the maximum number of the citations received by either concept v1 or v2 in the year y
+        # the minimum number of the total citations received by either concept v1 or v2 since its frist publication to the year y 
+        # the maximum number of the total citations received by either concept v1 or v2 since its frist publication to the year y 
+        # The minimum number of total citations received by either concept v1 or v2 in the three-year period ending with year y
+        # The maximum number of total citations received by either concept v1 or v2 in the three-year period ending with year y
+        # The minimum number of papers mentioning either concept v1 or v2
+        # The maximum number of papers mentioning either concept v1 or v2         
 
         # Assign the computed features directly to the pre-allocated array
         pair_cfeatures[id_v] = features
@@ -391,20 +405,20 @@ def get_all_feature(node_pair_features, vertex_list, logs_file_name):
         vals=[]
         v1, v2 = int(curr_v[0]), int(curr_v[1])
         
-        for ii in range(len(norm_node_feature)):
+        for ii in range(len(norm_node_feature)): # node features for v1, v2
             vals.append(norm_node_feature[ii][v1])
             vals.append(norm_node_feature[ii][v2])
 
-        for ii in range(len(norm_node_cfeature)):
+        for ii in range(len(norm_node_cfeature)): # node citation features for v1, v2
             vals.append(norm_node_cfeature[ii][v1])
             vals.append(norm_node_cfeature[ii][v2]) 
              
-        for ii in range(len(norm_pair_feature0[0])):
+        for ii in range(len(norm_pair_feature0[0])): # pair features for v1, v2 in years y, y-1, y-2
             vals.append(norm_pair_feature0[:,ii][id_v])
             vals.append(norm_pair_feature1[:,ii][id_v])
             vals.append(norm_pair_feature2[:,ii][id_v])
  
-        for ii in range(len(norm_pair_cfeature0[0])):
+        for ii in range(len(norm_pair_cfeature0[0])): # pair citation features for v1, v2 in years y, y-1, y-2
             vals.append(norm_pair_cfeature0[:,ii][id_v])
             vals.append(norm_pair_cfeature1[:,ii][id_v])
             vals.append(norm_pair_cfeature2[:,ii][id_v])
@@ -475,7 +489,7 @@ def get_norm_features(node_pair_features, data_max_fature, data_cmax_fature, ver
             
         store_features[id_v] = vals
 
-        if id_v%10**5==0: #if ii%10**4==0:
+        if id_v%10**5==0:  
 
             #print(f'    compute_all_properties_of_list progress: ({time.time()-start_time} sec), {id_v/10**6}M/{len(vertex_list)/10**6}M')
             with open(logs_file_name+"_logs.txt", "a") as myfile:

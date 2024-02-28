@@ -44,9 +44,6 @@ try:
     if not os.path.exists(log_folder):
         os.mkdir(log_folder)
 
-    if not os.path.exists(prediction_folder):
-        os.makedirs(prediction_folder)
-    
     if not os.path.exists(norm_feature_folder):
         os.makedirs(norm_feature_folder)
 

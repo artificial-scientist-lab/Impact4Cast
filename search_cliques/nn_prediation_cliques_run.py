@@ -51,7 +51,7 @@ try:
 except FileExistsError:
     pass
 
-num=0  ## file num
+num=0  ## file num 0 -- 14, in total 14 parts, parallel computing
 
 logs_run=os.path.join(log_folder,f"log_run{num}.txt")
 with open(logs_run, "a") as myfile:
@@ -190,8 +190,6 @@ for j in range(sub_chunks):
     node_pair_feature=[vertex_features, vertex_cfeatures, all_pair_features, all_pair_cfeatures]
     data_feature_sample=get_norm_features(node_pair_feature, data_max_feature, data_cmax_feature, pair_data, logs_file_name)
  
-    #tensor_data = torch.tensor(data_feature_sample, dtype=torch.float).to(device)
-
     with torch.no_grad():
         predictions=eval_model_in_batches(model_semnet, device, data_batch_size, data_feature_sample, user_parameter)
         nn_out=os.path.join(nn_output_folder,f"NN_Prediction_File{pair_start}_P{j}.gz")

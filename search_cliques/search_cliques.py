@@ -107,7 +107,6 @@ with open(logs_file_name, 'a') as f:
 time_start=time.time()
 sorted_indices = np.argsort(all_predictions)[::-1]
 full_train_data_sorted = full_train_data[sorted_indices]
-#prediction_sorted = all_predictions[sorted_indices]
 with open(logs_file_name, 'a') as f:
     f.write(f"\nDone, sort: {len(full_train_data_sorted)}; elapsed_time: {time.time() - time_start}")
     

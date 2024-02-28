@@ -53,7 +53,7 @@ try:
 except FileExistsError:
     pass
 
-num=0
+num=0  ## file num 0 -- 14, in total 14 parts, parallel computing
 logs_run=os.path.join(log_folder,f"log_run{num}.txt")
 with open(logs_run, "a") as myfile:
     myfile.write(f"\n{datetime.now()}: Start Run......") 

@@ -51,18 +51,24 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
 
 
 ## <a name="ff">Prepare other data</a>
-- `prepare_adjacency_pagerank.py`: Prepare dynamic knowledge graph and compute properties.
-- `prepare_unconnected_pair_solution.ipynb`: Find unconnected concept pairs (for training, testing and evaluating)
-  
-**get_dynamic_concepts**: [/get_dynamic_concepts/](/get_dynamic_concepts/)
-- `get_concept_citation.py`: Get citation data for nodes.
-- `merge_concept_citation.py`: Post-processing
-- `process_concept_to_pandas_frame.py`: Post-processing
-  
-**prepare_eval_data**: [/prepare_eval_data/](/prepare_eval_data/)
-  - `prepare_eval_feature_data.py`: Prepare features of knowledge graph (for evaluation dataset)
-  - `prepare_eval_feature_data_condition.py`: Prepare features of knowledge graph (for evaluation dataset, conditioned on existence in the future)
-
+<pre>
+.
+├── prepare_unconnected_pair_solution.ipynb: Find unconnected concept pairs (for training, testing and evaluating)
+├── prepare_adjacency_pagerank.py: Prepare dynamic knowledge graph and compute properties
+│
+├──<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_dynamic_concepts">create_dynamic_concepts</a>
+│  │
+│  ├── get_concept_citation.py: Create dynamic concepts from the knowledge graph (concepts carry the time and citation information). 
+│  ├── merge_concept_citation.py: Combining edges files
+│  └── process_concept_to_pandas_frame.py: Post-processing, store the full dynamic concepts
+│  ├── merge_concept_pairs.py: Combining edges files
+│  └── process_edge_to_pandas_frame.py: Post-processing, store the full dynamic knowledge graph
+│
+├──<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/prepare_eval_data">prepare_eval_data</a>
+   │
+   ├── prepare_eval_feature_data.py: Prepare features of knowledge graph (for evaluation dataset)
+   └── prepare_eval_feature_data_condition.py: Prepare features of knowledge graph (for evaluation dataset, conditioned on existence in the future)
+</pre>
 
 ## <a name="ff">Forecasting with Neural Network </a>
 <img src="miscellaneous/Fig2_NeuralNet.png" alt="workflow" width="800"/>

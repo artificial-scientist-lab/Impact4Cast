@@ -64,7 +64,7 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
 │  ├── merge_concept_pairs.py: Combining edges files
 │  └── process_edge_to_pandas_frame.py: Post-processing, store the full dynamic knowledge graph
 │
-├──<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/prepare_eval_data">prepare_eval_data</a>
+└──<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/prepare_eval_data">prepare_eval_data</a>
    │
    ├── prepare_eval_feature_data.py: Prepare features of knowledge graph (for evaluation dataset)
    └── prepare_eval_feature_data_condition.py: Prepare features of knowledge graph (for evaluation dataset, conditioned on existence in the future)
@@ -72,17 +72,22 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
 
 ## <a name="ff">Forecasting with Neural Network </a>
 <img src="miscellaneous/Fig2_NeuralNet.png" alt="workflow" width="800"/>
-
-- `train_model_2019_run.py`: Training neural network from 2016 -> 2019 (evaluated form 2019 -> 2022).
-- `train_model_2019_condition.py`: Training neural network from 2016 -> 2019 (evaluated form 2019 -> 2022, conditioned on existence in the future)
-- `train_model_2022_run.py`: Training 2019 -> 2022 (for real future predictions of 2025)
+<pre>
+.
+├── train_model_2019_run.py: Training neural network from 2016 -> 2019 (evaluated form 2019 -> 2022).
+├── train_model_2019_condition.py: Training neural network from 2016 -> 2019 (evaluated form 2019 -> 2022, conditioned on existence in the future)
+├── train_model_2019_individual_feature.py: Training neural network from 2016 -> 2019 (evaluated form 2019 -> 2022) on individual features
+└── train_model_2022_run.py: Training 2019 -> 2022 (for real future predictions of 2025)
+</pre>
 
 ## <a name="ff">Search Cliques </a>
-**search_cliques**: [/search_cliques/](/search_cliques/)
- - `get_max_feature_for_norm_run.py`: Calculating and normalizing the features of the entire knowledge graph.
- - `nn_prediation_cliques_run.py`: Neural-Network-based forecast of citation range for entire knowledge graph.
- - `search_cliques.py`: Search for cliques of predicted high-impact concepts.
- - `result_clique_T0_IR_010.txt`: Output of search.
+<pre>
+<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/search_cliques">search_cliques</a>
+├── get_max_feature_for_norm_run.py: Calculating and normalizing the features of the entire knowledge graph.
+├── nn_prediation_cliques_run.py: Neural-Network-based forecast of citation range for entire knowledge graph.
+├── search_cliques.py: Search for cliques of predicted high-impact concepts.
+└── result_clique_T0_IR_010.txt: Output of search.
+</pre>
  
     
 

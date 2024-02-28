@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     concept_folder="concept_seperate"
     try:
-        os.mkdir(concept_folder1)
+        os.mkdir(concept_folder)
     except FileExistsError:
         pass 
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
         formatted_ID = '{:02d}'.format(curr_ID)
         data_file=os.path.join(data_seperate_folder, f'part_{formatted_ID}.pkl')
  
-        concept_file1=os.path.join(concept_folder1, f'concept_{formatted_ID}.pkl')
+        concept_file=os.path.join(concept_folder, f'concept_{formatted_ID}.pkl')
 
 
         log_file = os.path.join('logs', 'log_'+formatted_ID+'.txt')
@@ -50,7 +50,7 @@ if __name__ == '__main__':
                 f.write(f'formatted_ID: {formatted_ID}; cc: {cc}, write_file num: {write_file}\n')
         cc+=1
 
-        if not os.path.exists(concept_file1):
+        if not os.path.exists(concept_file):
              
             concepts_for_paper_list=[]
 

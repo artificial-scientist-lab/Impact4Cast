@@ -26,7 +26,7 @@ if __name__ == '__main__':
     for id_file in range(total_file+1): # start from 0: 0-78
         
         file_ID = '{:02d}'.format(id_file)
-        cur_concept_file1=os.path.join(concept_folder, f'concept_{file_ID}.pkl')
+        cur_concept_file=os.path.join(concept_folder, f'concept_{file_ID}.pkl')
  
         
         with open(cur_concept_file, 'rb') as file:  

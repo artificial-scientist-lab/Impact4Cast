@@ -77,5 +77,77 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
 └── train_model_2022_run.py: Training 2019 -> 2022 (for real future predictions of 2025)
 </pre>
  
-    
 
+<details>
+  <summary><b>Feature Descriptions</b></summary>
+
+<table>
+    <tr>
+        <th>Feature Type</th>
+        <th>Feature Index</th>
+        <th>Feature Description</th>
+    </tr>
+    <tr>
+        <td rowspan="10" style="border-bottom: none;">node feature</td>
+        <td>Data 1</td>
+        <td>Data 1</td>
+    </tr>
+    <!-- Rows 2 to 10 for the first 'node feature' -->
+    <tr><td>Data 2</td><td>Data 2</td></tr>
+    <tr><td>Data 3</td><td>Data 3</td></tr>
+    <tr><td>Data 4</td><td>Data 4</td></tr>
+    <tr><td>Data 5</td><td>Data 5</td></tr>
+    <tr><td>Data 6</td><td>Data 6</td></tr>
+    <tr><td>Data 7</td><td>Data 7</td></tr>
+    <tr><td>Data 8</td><td>Data 8</td></tr>
+    <tr><td>Data 9</td><td>Data 9</td></tr>
+    <tr><td>Data 10</td><td>Data 10</td></tr>
+    <!-- Starting the next 10 rows for the second 'node feature' -->
+    <tr>
+        <td rowspan="10" style="border-bottom: none;">node feature</td>
+        <td>Data 11</td>
+        <td>Data 11</td>
+    </tr>
+    <tr><td>Data 12</td><td>Data 12</td></tr>
+    <tr><td>Data 13</td><td>Data 13</td></tr>
+    <tr><td>Data 14</td><td>Data 14</td></tr>
+    <tr><td>Data 15</td><td>Data 15</td></tr>
+    <tr><td>Data 16</td><td>Data 16</td></tr>
+    <tr><td>Data 17</td><td>Data 17</td></tr>
+    <tr><td>Data 18</td><td>Data 18</td></tr>
+    <tr><td>Data 19</td><td>Data 19</td></tr>
+    <tr><td>Data 20</td><td>Data 20</td></tr>
+    <!-- Starting the next 10 rows for the second 'node feature' -->
+    <tr>
+        <td rowspan="10" style="border-bottom: none;">pair feature</td>
+        <td>Data 11</td>
+        <td>Data 11</td>
+    </tr>
+    <tr><td>Data 12</td><td>Data 12</td></tr>
+    <tr><td>Data 13</td><td>Data 13</td></tr>
+    <tr><td>Data 14</td><td>Data 14</td></tr>
+    <tr><td>Data 15</td><td>Data 15</td></tr>
+    <tr><td>Data 16</td><td>Data 16</td></tr>
+    <tr><td>Data 17</td><td>Data 17</td></tr>
+    <tr><td>Data 18</td><td>Data 18</td></tr>
+    <tr><td>Data 19</td><td>Data 19</td></tr>
+    <tr><td>Data 20</td><td>Data 20</td></tr>
+     <!-- Starting the next 10 rows for the second 'node feature' -->
+    <tr>
+        <td rowspan="10" style="border-bottom: none;">pair citation feature</td>
+        <td>Data 11</td>
+        <td>Data 11</td>
+    </tr>
+    <tr><td>Data 12</td><td>Data 12</td></tr>
+    <tr><td>Data 13</td><td>Data 13</td></tr>
+    <tr><td>Data 14</td><td>Data 14</td></tr>
+    <tr><td>Data 15</td><td>Data 15</td></tr>
+    <tr><td>Data 16</td><td>Data 16</td></tr>
+    <tr><td>Data 17</td><td>Data 17</td></tr>
+    <tr><td>Data 18</td><td>Data 18</td></tr>
+    <tr><td>Data 19</td><td>Data 19</td></tr>
+    <tr><td>Data 20</td><td>Data 20</td></tr>
+</table>
+
+</details>
+ 

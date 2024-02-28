@@ -18,16 +18,16 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
  
 ### <a name="ff">1. Creating a list of scientific concepts</a>
 <pre>
-<a href="/create_concept/">create_concept</a>
+<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_concepts">create_concept</a>
 │ 
-├── <a href="/create_concept/Concept_Corpus/">Concept_Corpus</a>
+├── <a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_concepts/Concept_Corpus">Concept_Corpus</a>
 │   ├── s0_get_preprint_metadata.ipynb: Get metadata from chemRxiv, medRxiv, bioRxiv (<a href="https://www.kaggle.com/datasets/Cornell-University/arxiv">arXiv data from Kaggle</a>)
 │   ├── s1_make_metadate_arxivstyle.ipynb: Preprocessing metadata from different sources
 │   ├── s2_combine_all_preprint_metadate.ipynb: Combining metadata
 │   ├── s3_get_concepts.ipynb: Use NLP techniques (for instance <a href="https://github.com/csurfer/rake-nltk">RAKE</a> ) to extract concepts
 │   └── s4_improve_concept.ipynb: Further improvements of full concept list
 │   
-└── <a href="/create_concept/Domain_Concept/">Domain_Concept</a>
+└── <a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_concepts/Domain_Concept">Domain_Concept</a>
     ├── s0_prepare_optics_quantum_data.ipynb: Get papers for specific domain (optics and quantum physics in our case).
     ├── s1_split_domain_papers.py: Prepare data for parallelization.
     ├── s2_get_domain_concepts.py: Get domain-specific vertices in full concept list.
@@ -39,7 +39,7 @@ Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)
 ### <a name="ff">2. Creating dynamic knowlegde graph</a>
 
 <pre>
-<a href="/create_dynamic_edges/">create_dynamic_edges</a>
+<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_dynamic_edges">create_dynamic_edges</a>
 │
 ├── _get_openalex_workdata.py: Get metadata from <a href="https://openalex.org/">OpenAlex</a>)
 ├── _get_openalex_workdata_parallel_run1.py: Get parts of the metadata from OpenAlex (run in many parts)

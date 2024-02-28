@@ -18,7 +18,9 @@ def flatten(t):
 
 
 def format_IR(IR_num, split_type):
-    
+    """
+    make a string, which can be used when storing trained neural network, results, log files, etc.
+    """
     if isinstance(IR_num[0], list):  # Check if the first element is a list
         inner = ''.join(str(num) for num in IR_num[0])
         outer = '{:02d}'.format(IR_num[1])
@@ -29,7 +31,15 @@ def format_IR(IR_num, split_type):
     
 
 def make_folders(year_start, split_type, num_class, addition_str):
-    
+    """
+        create folders and subfolders
+        year_start is the train start year, e.g., 2016 for predicting 2019, the year_start is 2016
+        split_type is used for setting whether train conditionally or not
+        note: num_class is always setting to 2, due to binary classfication
+        As an example: year_start=2016, split_type=0; num_class=2; addition_str='train':
+        folder: 2016_train, 
+        subfolders: t0_c2_log, t0_c2_net, t0_c2_loss, t0_c2_curve, t0_c2_result   
+    """
     parent_folder = str(year_start)+"_"+ addition_str
     if not os.path.exists(parent_folder):
         os.mkdir(parent_folder)
@@ -64,8 +74,6 @@ def make_folders(year_start, split_type, num_class, addition_str):
 
 
 ######### Plots ###############
-
-    
 def calculate_plot_ROC(true_labels, nn_outputs, user_parameter, figure_name, save_figure_folder):
     """
     Plot the ROC curve for binary classification.
@@ -73,6 +81,12 @@ def calculate_plot_ROC(true_labels, nn_outputs, user_parameter, figure_name, sav
     Parameters:
     - true_labels: Ground truth binary labels.
     - nn_outputs: Raw outputs (logits) from the neural network.
+    - user_parameter: some user parameters whcih are num_class, IR_num, split_type, out_norm; not used here, can be removed
+    - figure_name: stored figure name
+    - save_figure_folder: the folder to store the figure, which is usually defined from t0_c2_curve created from make_folders()
+
+    return:
+    auc_score_number: the AUC value
     """
     num_class, IR_num, split_type, out_norm = user_parameter
     figure_path=os.path.join(save_figure_folder, figure_name)
@@ -98,154 +112,3 @@ def calculate_plot_ROC(true_labels, nn_outputs, user_parameter, figure_name, sav
     plt.close()
     
     return auc_score_number
-    
-    
-    
-def calculate_ROC_multi_class(outputs, class_labels, user_parameter, figure_name, save_figure_folder):
-    
-    num_class, IR_num, split_type, out_norm = user_parameter
-    figure_path = os.path.join(save_figure_folder, figure_name+'.png')
-    labels = class_labels
-
-    # Compute ROC curve and ROC area for each class
-    n_classes = outputs.shape[1]
-    fpr = dict()
-    tpr = dict()
-    roc_auc = dict()
-    for i in range(n_classes):
-        fpr[i], tpr[i], _ = roc_curve(labels[:, i], outputs[:, i])
-        roc_auc[i] = auc(fpr[i], tpr[i])
-
-    # Compute micro-average ROC curve and ROC area
-    fpr["micro"], tpr["micro"], _ = roc_curve(labels.ravel(), outputs.ravel())
-    roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
-    
-    # Compute macro-average ROC curve and ROC area
-    all_fpr = np.unique(np.concatenate([fpr[i] for i in range(n_classes)]))
-    mean_tpr = np.zeros_like(all_fpr)
-    for i in range(n_classes):
-        mean_tpr += np.interp(all_fpr, fpr[i], tpr[i])
-    mean_tpr /= n_classes
-    fpr["macro"] = all_fpr
-    tpr["macro"] = mean_tpr
-    roc_auc["macro"] = auc(fpr["macro"], tpr["macro"])
-    
-    # Plot all ROC curves
-    all_vals = []
-    plt.figure()
-    
-    if num_class <= 2:
-        plt.plot(fpr[1], tpr[1], label=f'AUC_ROC={roc_auc[1]}')
-        average_auc = roc_auc[1]
-        
-        for i in range(n_classes):
-            all_vals.append(roc_auc[i])
-    else:
-        for i in range(n_classes):
-            plt.plot(fpr[i], tpr[i], label=f'class-{i}: AUC_ROC={roc_auc[i]}')
-            all_vals.append(roc_auc[i])
-        average_auc = np.mean(all_vals)
-        
-        # Plot macro-average ROC curve
-    plt.plot(fpr["macro"], tpr["macro"], label=f'macro-average: AUC_ROC={roc_auc["macro"]}', color='navy', linestyle=':')
-    plt.plot(fpr["micro"], tpr["micro"], label=f'micro-average: AUC_ROC={roc_auc["micro"]}', color='deeppink', linestyle='--')
-
-    
-    plt.plot([0, 1], [0, 1], 'k--', label='baseline')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title(f'ROC: AUC={average_auc}')
-    plt.legend(loc="lower right")
-    plt.savefig(figure_path, dpi=600)
-    plt.show()
-    plt.close()
-    return all_vals, average_auc
-
-        
-def calculate_PR_multi_class(outputs, class_labels, user_parameter, figure_name, save_figure_folder):
-    
-    num_class, IR_num, split_type, out_norm = user_parameter
-    figure_path=os.path.join(save_figure_folder, figure_name+'.png')
-    
-    labels = class_labels
-
-    # Compute Precision-Recall curve and area for each class
-    n_classes = outputs.shape[1]
-    precision = dict()
-    recall = dict()
-    average_precision = dict()
-    for i in range(n_classes):
-        precision[i], recall[i], _ = precision_recall_curve(labels[:, i], outputs[:, i])
-        average_precision[i] = average_precision_score(labels[:, i], outputs[:, i])
-
-    # Compute micro-average Precision-Recall curve and area (optional)
-    precision["micro"], recall["micro"], _ = precision_recall_curve(labels.ravel(), outputs.ravel())
-    average_precision["micro"] = average_precision_score(labels.ravel(), outputs.ravel())
-
-    # Plot all Precision-Recall curves
-    all_vals=[]
-    plt.figure()
-    for i in range(n_classes):
-        plt.plot(recall[i], precision[i], label=f'class-{i}: AUC={average_precision[i]}')
-        all_vals.append(average_precision[i])
-        
-    average_ap = np.mean(all_vals)
-        
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.title(f'PR curve: AUC={average_ap}')
-    plt.legend(loc="lower right")
-    plt.savefig(figure_path,dpi=600)
-    plt.show()
-    plt.close()
-    return all_vals, average_ap
-
-  
-
-def plot_confusion_matrix(y_true, y_pred, classes, normalize=False, title=None, cmap=plt.cm.Blues, figure_name="cm_plot", save_figure_folder="save_aucPlot"):
-    """
-    This function prints and plots the confusion matrix.
-    Normalization can be applied by setting `normalize=True`.
-    """
-    figure_path=os.path.join(save_figure_folder, figure_name+'.png')
-    
-    if not title:
-        if normalize:
-            title = 'Normalized confusion matrix'
-        else:
-            title = 'Confusion matrix, without normalization'
-
-    # Compute confusion matrix
-    cm = confusion_matrix(y_true, y_pred)
-    cm_norm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]  # normalized cm
-
-
-    fig, ax = plt.subplots(figsize=(5, 5)) 
-        
-    im = ax.imshow(cm_norm, interpolation='nearest', cmap=cmap)  # always plot cm_norm
-    ax.figure.colorbar(im, ax=ax)
-    ax.set(xticks=np.arange(cm.shape[1]),
-           yticks=np.arange(cm.shape[0]),
-           xticklabels=classes, yticklabels=classes,
-           title=title,
-           ylabel='True label',
-           xlabel='Predicted label')
-
-    # Loop over data dimensions and create text annotations.
-    fmt = '{:.2%}\n{:,}'  # format for percentage and count
-    thresh = cm.max() / 2.
-    for i in range(cm.shape[0]):
-        for j in range(cm.shape[1]):
-            ax.text(j, i, fmt.format(cm_norm[i, j], cm[i, j]),
-                    ha="center", va="center",
-                    color="white" if cm[i, j] > thresh else "black")
-    fig.tight_layout()
-    
-    plt.savefig(figure_path,dpi=600)
-    plt.show()
-    plt.close()
-    return cm

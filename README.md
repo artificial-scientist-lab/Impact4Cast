@@ -79,7 +79,7 @@
  
 
 <details>
-  <summary><b>Feature Descriptions</b></summary>
+  <summary><b>Feature descriptions for an unconnected pair of concepts (u, v)</b></summary>
 
 <table>
     <tr>
@@ -88,20 +88,17 @@
         <th>Feature Description</th>
     </tr>
     <tr>
-        <td rowspan="10" style="border-bottom: none;">node feature</td>
+        <td rowspan="6" style="border-bottom: none;">node feature</td>
         <td>0-5</td>
-        <td>The number of neighbours for vertices u and v in years y, y-1, y-2</td>
+        <td>the number of neighbours for vertices $u$ and $v$ in years $y$, $y-1$, $y-2$<br> denoted as: $N_{u,y}$, $N_{v,y}$, $N_{u,y-1}$, $N_{v,y-1}$, $N_{u, y-2}$, $N_{v, y-2}$ </td>
     </tr>
     <!-- Rows 2 to 10 for the first 'node feature' -->
-    <tr><td>Data 2</td><td>Data 2</td></tr>
-    <tr><td>Data 3</td><td>Data 3</td></tr>
-    <tr><td>Data 4</td><td>Data 4</td></tr>
-    <tr><td>Data 5</td><td>Data 5</td></tr>
-    <tr><td>Data 6</td><td>Data 6</td></tr>
-    <tr><td>Data 7</td><td>Data 7</td></tr>
-    <tr><td>Data 8</td><td>Data 8</td></tr>
-    <tr><td>Data 9</td><td>Data 9</td></tr>
-    <tr><td>Data 10</td><td>Data 10</td></tr>
+    <tr><td>6-7</td><td>the number of new neighbors since 1 years prior to $y$ for vertices $u$ and $v$<br>denoted as: $N_{u,y}^{\Delta}$, $N_{v,y}^{\Delta}$
+</td></tr>
+    <tr><td>8-9</td><td>the number of new neighbors since 2 years prior to $y$ for vertices $u$ and $v$ <br>denoted as: $N_{u,y}^{\Delta 2}$, $N_{v,y}^{\Delta 2}$</td></tr>
+    <tr><td>10-11</td><td>the rank of the number of new neighbors since 1 years prior to $y$ for vertices $u$ and $v$ <br>denoted as: $rN_{u,y}^{\Delta}$, $rN_{v,y}^{\Delta}$</td></tr>
+    <tr><td>12-13</td><td>the rank of the number of new neighbors since 2 years prior to $y$ for vertices $u$ and $v$ <br>denoted as: $rN_{u,y}^{\Delta 2}$, $rN_{v,y}^{\Delta 2}$</td></tr>
+    <tr><td>14-19</td><td>the PageRank score for vertices $u$ and $v$ in years $y$, $y-1$, $y-2$<br>denoted as: $PR_{u,y}$, $PR_{v,y}$, $PR_{u,y-1}$, $PR_{v,y-1}$, $PR_{u, y-2}$, $PR_{v, y-2}$ </td></tr>
     <!-- Starting the next 10 rows for the second 'node feature' -->
     <tr>
         <td rowspan="10" style="border-bottom: none;">node feature</td>

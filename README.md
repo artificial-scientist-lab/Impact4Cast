@@ -7,16 +7,16 @@
 \
 **Preprint:** [arXiv:2402.08640](https://arxiv.org/abs/2402.08640)
 
-
-_**Which scientific concepts, that have never been investigated jointly, will lead to the most impactful research?**_
+**Which scientific concepts, that have never been investigated jointly, will lead to the most impactful research?**
 
 <img src="miscellaneous/Impact4Cast.png" alt="workflow" width="700"/>
 
-Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)  
+> [!NOTE]\
+> Full Dynamic Knowledge Graph and Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)  
 
 ## <a name="ff">Prepare an evolving, citation-augmented knowledge graph</a>
- 
 ### <a name="ff">1. Creating a list of scientific concepts</a>
+
 <pre>
 <a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_concepts">create_concept</a>
 │ 

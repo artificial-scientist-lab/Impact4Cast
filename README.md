@@ -89,8 +89,8 @@
     </tr>
     <tr>
         <td rowspan="10" style="border-bottom: none;">node feature</td>
-        <td>Data 1</td>
-        <td>Data 1</td>
+        <td>0-5</td>
+        <td>The number of neighbours for vertices u and v in years y, y-1, y-2</td>
     </tr>
     <!-- Rows 2 to 10 for the first 'node feature' -->
     <tr><td>Data 2</td><td>Data 2</td></tr>

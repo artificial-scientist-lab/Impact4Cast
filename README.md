@@ -133,7 +133,7 @@
     <tr><td>96-98</td><td>the jaccard coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by num_shared_neighbor/(deg_u + deg_v - num_shared_neighbor) <br> denoted as: $jac_{y}$, $jac_{y-1}$, $jac_{y-2}$ </td></tr>
      <!-- Starting the next 10 rows for the second 'node feature' -->
     <tr>
-        <td rowspan="10" style="border-bottom: none;">pair citation feature</td>
+        <td rowspan="14" style="border-bottom: none;">pair citation feature</td>
         <td>99-101</td>
         <td>the ratio of the sum of citations received by concepts $u$ and $v$ in the year $y$ to the sum of number of papers mentioning either concept, similar for years $y-1$, $y-2$</td>
     </tr>

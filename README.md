@@ -130,26 +130,26 @@
     <tr><td>87-89</td><td>the simpson coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by number_shared_neighbor / np.min([deg_u, deg_u])<br> denoted as: $spi_{y}$, $spi_{y-1}$, $spi_{y-2}$</td></tr>
     <tr><td>90-92</td><td>the preferential attachment coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by deg_u*deg_u<br> denoted as: $pre_{y}$, $pre_{y-1}$, $pre_{y-2}$</td></tr>
     <tr><td>93-95</td><td>the Sørensen–Dice coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by 2*num_shared_neighbor / (deg_u + deg_v)<br> denoted as: $sod_{y}$, $sod_{y-1}$, $sod_{y-2}$</td></tr>
-    <tr><td>96-98</td><td>the jaccard coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by num_shared_neighbor/(deg_u + deg_v - num_shared_neighbor) <br> denoted as: $jac_{y}$, $jac_{y-1}$, $jac_{y-2}$ </td></tr>
+    <tr><td>96-98</td><td>the jaccard coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by num_shared_neighbor/(deg_u + deg_v - num_shared_neighbor)<br> denoted as: $jac_{y}$, $jac_{y-1}$, $jac_{y-2}$ </td></tr>
      <!-- Starting the next 10 rows for the second 'node feature' -->
     <tr>
         <td rowspan="14" style="border-bottom: none;">pair citation feature</td>
         <td>99-101</td>
-        <td>the ratio of the sum of citations received by concepts $u$ and $v$ in the year $y$ to the sum of number of papers mentioning either concept, similar for years $y-1$, $y-2$</td>
+        <td>the ratio of the sum of citations received by concepts $u$ and $v$ in the year $y$ to the sum of number of papers mentioning either concept, similar for years $y-1$, $y-2$<br>calculated by ($c_{u,y}$ + $c_{v,y}$) / ($pn_{u,y}$ + $pn_{v,y}$) </td>
     </tr>
-    <tr><td>102-104</td><td>the ratio of the product of citations received by concepts $u$ and $v$ in the year $y$ to the sum of number of papers mentioning either concept,  similar for years $y-1$, $y-2$</td></tr>
-    <tr><td>105-107</td><td>the sum of the average citations received by concepts $u$ and $v$ in the year $y$, $y-1$, $y-2$</td></tr>
-    <tr><td>108-110</td><td>the sum of the average total citations received by concepts $u$ and $v$ from their first publication up to the year $y$, $y-1$, $y-2$</td></tr>
-    <tr><td>111-113</td><td>the sum of the citations received by concepts $u$ and $v$ in the three-year period ending with year $y$, $y-1$, $y-2$</td></tr>
-    <tr><td>114-116</td><td>the sum of the average citations received by concepts $u$ and $v$ in the three-year period ending with year $y$, $y-1$, $y-2$</td></tr>
-    <tr><td>117-119</td><td>the minimum number of the citations received by either concept $u$ or $v$ in the year $y$, $y-1$, $y-2$</td></tr>
-    <tr><td>120-122</td><td>the maximum number of the citations received by either concept $u$ or $v$ in the year $y$, $y-1$, $y-2$</td></tr>
-    <tr><td>123-125</td><td>the minimum number of the total citations received by either concept $u$ or $v$ since its frist publication to the year $y$, $y-1$, $y-2$ </td></tr>
-    <tr><td>126-128</td><td>the maximum number of the total citations received by either concept $u$ or $v$ since its frist publication to the year $y$, $y-1$, $y-2$</td></tr>
-    <tr><td>129-131</td><td>the minimum number of total citations received by either concept $u$ or $v$ in the three-year period ending with year $y$, $y-1$, $y-2$</td></tr>
-    <tr><td>132-134</td><td>the maximum number of total citations received by either concept $u$ or $v$ in the three-year period ending with year $y$, $y-1$, $y-2$</td></tr>
-    <tr><td>135-137</td><td>the minimum number of papers mentioning either concept $u$ or $v$</td></tr>
-    <tr><td>138-140</td><td>the maximum number of papers mentioning either concept $u$ or $v$</td></tr>
+    <tr><td>102-104</td><td>the ratio of the product of citations received by concepts $u$ and $v$ in the year $y$ to the sum of number of papers mentioning either concept, similar for years $y-1$, $y-2$<br>calculated by ($c_{u,y}$ * $c_{v,y}$) / ($pn_{u,y}$ + $pn_{v,y}$) </td></tr>
+    <tr><td>105-107</td><td>the sum of the average citations received by concepts $u$ and $v$ in the year $y$, $y-1$, $y-2$<br>e.g., calculated by ($cm_{u,y}$ + $cm_{v,y}$) for year y</td></tr>
+    <tr><td>108-110</td><td>the sum of the average total citations received by concepts $u$ and $v$ from their first publication up to the year $y$, $y-1$, $y-2$<br> e.g., calculated by ($ctm_{u,y}$ , $ctm_{v,y}$) for year y </td></tr>
+    <tr><td>111-113</td><td>the sum of the citations received by concepts $u$ and $v$ in the three-year period ending with year $y$, $y-1$, $y-2$<br> e.g., calculated by ($ct^{\Delta 3}_{u,y}$ + $ct^{\Delta 3}_{v,y}$) for year y</td></tr>
+    <tr><td>114-116</td><td>the sum of the average citations received by concepts $u$ and $v$ in the three-year period ending with year $y$, $y-1$, $y-2$<br> e.g., calculated by ($ctm^{\Delta 3}_{u,y}$ + $ctm^{\Delta 3}_{v,y}$) for year y</td></tr>
+    <tr><td>117-119</td><td>the minimum number of the citations received by either concept $u$ or $v$ in the year $y$, $y-1$, $y-2$<br> e.g., min($c_{u,y}$, $c_{u,y}$)</td></tr>
+    <tr><td>120-122</td><td>the maximum number of the citations received by either concept $u$ or $v$ in the year $y$, $y-1$, $y-2$<br> e.g., max($c_{u,y}$, $c_{u,y}$)</td></tr>
+    <tr><td>123-125</td><td>the minimum number of the total citations received by either concept $u$ or $v$ since its frist publication to the year $y$, $y-1$, $y-2$<br> e.g., min($ct_{u,y}$, $ct_{u,y}$) </td></tr>
+    <tr><td>126-128</td><td>the maximum number of the total citations received by either concept $u$ or $v$ since its frist publication to the year $y$, $y-1$, $y-2$<br> e.g., max($ct_{u,y}$, $ct_{u,y}$)</td></tr>
+    <tr><td>129-131</td><td>the minimum number of total citations received by either concept $u$ or $v$ in the three-year period ending with year $y$, $y-1$, $y-2$<br> e.g., min($ct^{\Delta 3}_{u,y}$ , $ct^{\Delta 3}_{v,y}$)</td></tr>
+    <tr><td>132-134</td><td>the maximum number of total citations received by either concept $u$ or $v$ in the three-year period ending with year $y$, $y-1$, $y-2$<br> e.g., max($ct^{\Delta 3}_{u,y}$ , $ct^{\Delta 3}_{v,y}$)</td></tr>
+    <tr><td>135-137</td><td>the minimum number of papers mentioning either concept $u$ or $v$<br>e.g., min($pn_{u,y}$ , $pn_{v,y}$)</td></tr>
+    <tr><td>138-140</td><td>the maximum number of papers mentioning either concept $u$ or $v$<br>e.g., max($pn_{u,y}$ , $pn_{v,y}$)</td></tr>
 </table>
 
 </details>

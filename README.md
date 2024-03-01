@@ -15,7 +15,7 @@
 > Full Dynamic Knowledge Graph and Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)  
 
 ## <a name="ff">Prepare an evolving, citation-augmented knowledge graph</a>
-### <a name="ff">1. Creating a list of scientific concepts</a>
+### <a name="ff">Creating a list of scientific concepts</a>
 
 <pre>
 <a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_concepts">create_concept</a>
@@ -36,7 +36,7 @@
     └── full_domain_concepts.txt: Final list of 37,960 concepts (represent vertices of knowledge graph)
 </pre>
  
-### <a name="ff">2. Creating dynamic knowlegde graph</a>
+### <a name="ff">Creating dynamic knowlegde graph</a>
 
 <pre>
 <a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_dynamic_edges">create_dynamic_edges</a>
@@ -67,7 +67,7 @@
    └── prepare_eval_feature_data_condition.py: Prepare features of knowledge graph (for evaluation dataset, conditioned on existence in the future)
 </pre>
 
-### <a name="ff">Forecasting with Neural Network </a>
+## <a name="ff">🤖Forecasting with Neural Network </a>
 <img src="miscellaneous/Fig2_NeuralNet.png" alt="workflow" width="800"/>
 <pre>
 .

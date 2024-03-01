@@ -101,7 +101,7 @@
     <tr><td>14-19</td><td>the PageRank score for vertices $u$ and $v$ in years $y$, $y-1$, $y-2$<br>denoted as: $PR_{u,y}$, $PR_{v,y}$, $PR_{u,y-1}$, $PR_{v,y-1}$, $PR_{u, y-2}$, $PR_{v, y-2}$ </td></tr>
     <!-- Starting the next 10 rows for the second 'node feature' -->
     <tr>
-        <td rowspan="10" style="border-bottom: none;">node citation feature</td>
+        <td rowspan="15" style="border-bottom: none;">node citation feature</td>
         <td>20-25</td>
         <td>yearly citation for vertices $u$ and $v$ during the years $y$, $y-1$, $y-2$<br>denoted as: $c_{u,y}$ , $c_{v,y}$, $c_{u,y-1}$, $c_{v,y-1}$, $c_{u,y-2}$, $c_{v,y-2}$</td>
     </tr>
@@ -121,34 +121,35 @@
     <tr><td>76-77</td><td>the rank of the number of new papers mentioning vertices $u$ and $v$, since 2 years prior to y<br>denoted as: $rpnew^{\Delta 2}_{u,y}$, $rpnew^{\Delta 2}_{v,y}$ </td></tr>
     <!-- Starting the next 10 rows for the second 'node feature' -->
     <tr>
-        <td rowspan="10" style="border-bottom: none;">pair feature</td>
-        <td>Data 11</td>
-        <td>Data 11</td>
+        <td rowspan="7" style="border-bottom: none;">pair feature</td>
+        <td>78-80</td>
+        <td>the number of shared neighbors between vertices $u$ and $v$ for the years $y$, $y-1$, $y-2$ <br> denoted as: $ns_{y}$, $ns_{y-1}$, $ns_{y-2}$</td>
     </tr>
-    <tr><td>Data 12</td><td>Data 12</td></tr>
-    <tr><td>Data 13</td><td>Data 13</td></tr>
-    <tr><td>Data 14</td><td>Data 14</td></tr>
-    <tr><td>Data 15</td><td>Data 15</td></tr>
-    <tr><td>Data 16</td><td>Data 16</td></tr>
-    <tr><td>Data 17</td><td>Data 17</td></tr>
-    <tr><td>Data 18</td><td>Data 18</td></tr>
-    <tr><td>Data 19</td><td>Data 19</td></tr>
-    <tr><td>Data 20</td><td>Data 20</td></tr>
+    <tr><td>81-83</td><td>the geometric coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by number_shared_neighbor**2 / (deg_u * deg_v), deg_u is the degree of vertex $u$ <br> denoted as: $geo_{y}$, $geo_{y-1}$, $geo_{y-2}$</td></tr>
+    <tr><td>84-86</td><td>the cosine coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by geometric_index**0.5<br> denoted as: $cos_{y}$, $cos_{y-1}$, $cos_{y-2}$</td></tr>
+    <tr><td>87-89</td><td>the simpson coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by number_shared_neighbor / np.min([deg_u, deg_u])<br> denoted as: $spi_{y}$, $spi_{y-1}$, $spi_{y-2}$</td></tr>
+    <tr><td>90-92</td><td>the preferential attachment coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by deg_u*deg_u<br> denoted as: $pre_{y}$, $pre_{y-1}$, $pre_{y-2}$</td></tr>
+    <tr><td>93-95</td><td>the Sørensen–Dice coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by 2*num_shared_neighbor / (deg_u + deg_v)<br> denoted as: $sod_{y}$, $sod_{y-1}$, $sod_{y-2}$</td></tr>
+    <tr><td>96-98</td><td>the jaccard coefficient for the pair ($u$ and $v$) for the years $y$, $y-1$, $y-2$<br>calculated by num_shared_neighbor/(deg_u + deg_v - num_shared_neighbor) <br> denoted as: $jac_{y}$, $jac_{y-1}$, $jac_{y-2}$ </td></tr>
      <!-- Starting the next 10 rows for the second 'node feature' -->
     <tr>
         <td rowspan="10" style="border-bottom: none;">pair citation feature</td>
-        <td>Data 11</td>
-        <td>Data 11</td>
+        <td>99-101</td>
+        <td>the ratio of the sum of citations received by concepts $u$ and $v$ in the year $y$ to the sum of number of papers mentioning either concept, similar for years $y-1$, $y-2$</td>
     </tr>
-    <tr><td>Data 12</td><td>Data 12</td></tr>
-    <tr><td>Data 13</td><td>Data 13</td></tr>
-    <tr><td>Data 14</td><td>Data 14</td></tr>
-    <tr><td>Data 15</td><td>Data 15</td></tr>
-    <tr><td>Data 16</td><td>Data 16</td></tr>
-    <tr><td>Data 17</td><td>Data 17</td></tr>
-    <tr><td>Data 18</td><td>Data 18</td></tr>
-    <tr><td>Data 19</td><td>Data 19</td></tr>
-    <tr><td>Data 20</td><td>Data 20</td></tr>
+    <tr><td>102-104</td><td>the ratio of the product of citations received by concepts $u$ and $v$ in the year $y$ to the sum of number of papers mentioning either concept,  similar for years $y-1$, $y-2$</td></tr>
+    <tr><td>105-107</td><td>the sum of the average citations received by concepts $u$ and $v$ in the year $y$, $y-1$, $y-2$</td></tr>
+    <tr><td>108-110</td><td>the sum of the average total citations received by concepts $u$ and $v$ from their first publication up to the year $y$, $y-1$, $y-2$</td></tr>
+    <tr><td>111-113</td><td>the sum of the citations received by concepts $u$ and $v$ in the three-year period ending with year $y$, $y-1$, $y-2$</td></tr>
+    <tr><td>114-116</td><td>the sum of the average citations received by concepts $u$ and $v$ in the three-year period ending with year $y$, $y-1$, $y-2$</td></tr>
+    <tr><td>117-119</td><td>the minimum number of the citations received by either concept $u$ or $v$ in the year $y$, $y-1$, $y-2$</td></tr>
+    <tr><td>120-122</td><td>the maximum number of the citations received by either concept $u$ or $v$ in the year $y$, $y-1$, $y-2$</td></tr>
+    <tr><td>123-125</td><td>the minimum number of the total citations received by either concept $u$ or $v$ since its frist publication to the year $y$, $y-1$, $y-2$ </td></tr>
+    <tr><td>126-128</td><td>the maximum number of the total citations received by either concept $u$ or $v$ since its frist publication to the year $y$, $y-1$, $y-2$</td></tr>
+    <tr><td>129-131</td><td>the minimum number of total citations received by either concept $u$ or $v$ in the three-year period ending with year $y$, $y-1$, $y-2$</td></tr>
+    <tr><td>132-134</td><td>the maximum number of total citations received by either concept $u$ or $v$ in the three-year period ending with year $y$, $y-1$, $y-2$</td></tr>
+    <tr><td>135-137</td><td>the minimum number of papers mentioning either concept $u$ or $v$</td></tr>
+    <tr><td>138-140</td><td>the maximum number of papers mentioning either concept $u$ or $v$</td></tr>
 </table>
 
 </details>

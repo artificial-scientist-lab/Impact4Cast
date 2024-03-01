@@ -101,19 +101,24 @@
     <tr><td>14-19</td><td>the PageRank score for vertices $u$ and $v$ in years $y$, $y-1$, $y-2$<br>denoted as: $PR_{u,y}$, $PR_{v,y}$, $PR_{u,y-1}$, $PR_{v,y-1}$, $PR_{u, y-2}$, $PR_{v, y-2}$ </td></tr>
     <!-- Starting the next 10 rows for the second 'node feature' -->
     <tr>
-        <td rowspan="10" style="border-bottom: none;">node feature</td>
-        <td>Data 11</td>
-        <td>Data 11</td>
+        <td rowspan="10" style="border-bottom: none;">node citation feature</td>
+        <td>20-25</td>
+        <td>yearly citation for vertices $u$ and $v$ during the years $y$, $y-1$, $y-2$<br>denoted as: $c_{u,y}$ , $c_{v,y}$, $c_{u,y-1}$, $c_{v,y-1}$, $c_{u,y-2}$, $c_{v,y-2}$</td>
     </tr>
-    <tr><td>Data 12</td><td>Data 12</td></tr>
-    <tr><td>Data 13</td><td>Data 13</td></tr>
-    <tr><td>Data 14</td><td>Data 14</td></tr>
-    <tr><td>Data 15</td><td>Data 15</td></tr>
-    <tr><td>Data 16</td><td>Data 16</td></tr>
-    <tr><td>Data 17</td><td>Data 17</td></tr>
-    <tr><td>Data 18</td><td>Data 18</td></tr>
-    <tr><td>Data 19</td><td>Data 19</td></tr>
-    <tr><td>Data 20</td><td>Data 20</td></tr>
+    <tr><td>26-31</td><td>total citation for vertices $u$ and $v$ since their first publications to the year $y$, $y-1$, $y-2$<br>denoted as: $ct_{u,y}$ , $ct_{v,y}$, $ct_{u,y-1}$, $ct_{v,y-1}$, $ct_{u,y-2}$, $ct_{v,y-2}$ </td></tr>
+    <tr><td>32-37</td><td>total citation for vertices $u$ and $v$ in three-year period ending with the year $y$, $y-1$, $y-2$<br>denoted as: $ct^{\Delta 3}_{u,y}$ , $ct^{\Delta 3}_{v,y}$, $ct^{\Delta 3}_{u,y-1}$, $ct^{\Delta 3}_{v,y-1}$, $ct^{\Delta 3}_{u,y-2}$, $ct^{\Delta 3}_{v,y-2}$</td></tr>
+    <tr><td>38-43</td><td>the number of papers mentioning either concept ($u$ or $v$) until the year $y$, $y-1$, $y-2$<br>denoted as: $pn_{u,y}$ , $pn_{v,y}$, $pn_{u,y-1}$, $pn_{v,y-1}$, $pn_{u,y-2}$, $pn_{v,y-2}$</td></tr>
+    <tr><td>44-49</td><td>The average yearly citation for vertices $u$ and $v$ during the years $y$, $y-1$, and $y-2$, which is calculated based on the total citations received during the year divided by the number of papers mentioning the vertices from their first publications up to the respective year<br>denoted as: $cm_{u,y}$ , $cm_{v,y}$, $cm_{u,y-1}$, $cm_{v,y-1}$, $cm_{u,y-2}$, $cm_{v,y-2}$; as an example: $cm_{u,y}$ is $\frac{c_{u,y}}{pn_{u,y}}$</td></tr>
+    <tr><td>50-55</td><td>The average total citation for vertices $u$ and $v$ since their first publications to the year $y$, $y-1$, $y-2$,which is determined by dividing the cumulative citations by the count of papers that mentioned these vertices since their first publications<br>denoted as: $ctm_{u,y}$ , $ctm_{v,y}$, $ctm_{u,y-1}$, $ctm_{v,y-1}$, $ctm_{u,y-2}$, $ctm_{v,y-2}$; as an example: $ctm_{u,y}$ is $\frac{ct_{u,y}}{pn_{u,y}}$</td></tr>
+    <tr><td>56-61</td><td>The average total citation for vertices $u$ and $v$ in three-year period ending with the year $y$, $y-1$, $y-2$, which is calculated by dividing the cumulative three-year period citations by the count of papers that mentioned these vertices since their first publications<br>denoted as: $ctm^{\Delta 3}_{u,y}$ , $ctm^{\Delta 3}_{v,y}$, $ctm^{\Delta 3}_{u,y-1}$, $ctm^{\Delta 3}_{v,y-1}$, $ctm^{\Delta 3}_{u,y-2}$, $ctm^{\Delta 3}_{v,y-2}$; as an example: $ctm^{\Delta 3}_{u,y}$ is $\frac{ct^{\Delta 3}_{u,y}}{pn_{u,y}}$</td></tr>
+    <tr><td>62-63</td><td>the number of new citations for vertices $u$ and $v$, since 1 years prior to y <br>denoted as: $cnew^{\Delta 1}_{u,y}$ , $cnew^{\Delta 1}_{v,y}$ </td></tr>
+    <tr><td>64-65</td><td>the number of new citations for vertices $u$ and $v$, since 2 years prior to y <br>denoted as: $cnew^{\Delta 2}_{u,y}$ , $cnew^{\Delta 2}_{v,y}$ </td></tr>
+    <tr><td>66-67</td><td>the rank of the number of new citations for vertices $u$ and $v$, since 1 years prior to y <br>denoted as: $rcnew^{\Delta 1}_{u,y}$ , $rcnew^{\Delta 1}_{v,y}$ </td></tr>
+    <tr><td>68-69</td><td>the rank of the number of new citations for vertices $u$ and $v$, since 2 years prior to y <br>denoted as: $rcnew^{\Delta 2}_{u,y}$ , $rcnew^{\Delta 2}_{v,y}$ </td></tr>
+    <tr><td>70-71</td><td>the number of new papers mentioning vertices $u$ and $v$, since 1 years prior to y<br>denoted as: $pnew^{\Delta 1}_{u,y}$ , $pnew^{\Delta 1}_{v,y}$ </td></tr>
+    <tr><td>72-73</td><td>the number of new papers mentioning vertices $u$ and $v$, since 2 years prior to y<br>denoted as: $pnew^{\Delta 2}_{u,y}$ , $pnew^{\Delta 2}_{v,y}$ </td></tr>
+    <tr><td>74-75</td><td>the rank of the number of new papers mentioning vertices $u$ and $v$<br>denoted as: $rpnew^{\Delta 1}_{u,y}$ , $rpnew^{\Delta 1}_{v,y}$ </td></tr>
+    <tr><td>76-77</td><td>the rank of the number of new papers mentioning vertices $u$ and $v$, since 2 years prior to y<br>denoted as: $rpnew^{\Delta 2}_{u,y}$, $rpnew^{\Delta 2}_{v,y}$ </td></tr>
     <!-- Starting the next 10 rows for the second 'node feature' -->
     <tr>
         <td rowspan="10" style="border-bottom: none;">pair feature</td>

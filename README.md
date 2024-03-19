@@ -33,7 +33,7 @@
     ├── s2_get_domain_concepts.py: Get domain-specific vertices in full concept list.
     ├── s3_merge_concepts.py: Postprocessing domain-specific concepts
     ├── s4_improve_concepts.ipynb: Further improve concept lists
-    ├── s5_improve_manually_concepts.py: Manually inspect the concepts in the very end for grammar, non-conceptual phrases, verbs, ordinal numbers, conjunctions, adverbials and so on, to ensure quality
+    ├── s5_improve_manually_concepts.py: Manually inspect the concepts in the very end for grammar, non-conceptual phrases, verbs, ordinal numbers, conjunctions, adverbials and so on, to improve quality
     └── full_domain_concepts.txt: Final list of 37,960 concepts (represent vertices of knowledge graph)
 </pre>
  

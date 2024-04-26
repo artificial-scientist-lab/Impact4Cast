@@ -114,11 +114,11 @@
     <tr><td>56-61</td><td>The average total citation for vertices $u$ and $v$ in three-year period ending with the year $y$, $y-1$, $y-2$<br> calculated by dividing the cumulative three-year period citations by the count of papers that mentioned these vertices since their first publications<br>denoted as: $ctm^{\Delta 3}_{u,y}$ , $ctm^{\Delta 3}_{v,y}$, $ctm^{\Delta 3}_{u,y-1}$, $ctm^{\Delta 3}_{v,y-1}$, $ctm^{\Delta 3}_{u,y-2}$, $ctm^{\Delta 3}_{v,y-2}$; as an example: $ctm^{\Delta 3}_{u,y}$ is $\frac{ct^{\Delta 3}_{u,y}}{pn_{u,y}}$</td></tr>
     <tr><td>62-63</td><td>the number of new citations for vertices $u$ and $v$, since 1 years prior to y <br>denoted as: $cnew^{\Delta 1}_{u,y}$ , $cnew^{\Delta 1}_{v,y}$ </td></tr>
     <tr><td>64-65</td><td>the number of new citations for vertices $u$ and $v$, since 2 years prior to y <br>denoted as: $cnew^{\Delta 2}_{u,y}$ , $cnew^{\Delta 2}_{v,y}$ </td></tr>
-    <tr><td>66-67</td><td>the rank of the number of new citations for vertices $u$ and $v$, since 1 years prior to y <br>denoted as: $rcnew^{\Delta 1}_{u,y}$ , $rcnew^{\Delta 1}_{v,y}$ </td></tr>
+    <tr><td>66-67</td><td>the rank of the number of new citations for vertices $u$ and $v$, since 1 year prior to y <br>denoted as: $rcnew^{\Delta 1}_{u,y}$ , $rcnew^{\Delta 1}_{v,y}$ </td></tr>
     <tr><td>68-69</td><td>the rank of the number of new citations for vertices $u$ and $v$, since 2 years prior to y <br>denoted as: $rcnew^{\Delta 2}_{u,y}$ , $rcnew^{\Delta 2}_{v,y}$ </td></tr>
-    <tr><td>70-71</td><td>the number of new papers mentioning vertices $u$ and $v$, since 1 years prior to y<br>denoted as: $pnew^{\Delta 1}_{u,y}$ , $pnew^{\Delta 1}_{v,y}$ </td></tr>
+    <tr><td>70-71</td><td>the number of new papers mentioning vertices $u$ and $v$, since 1 year prior to y<br>denoted as: $pnew^{\Delta 1}_{u,y}$ , $pnew^{\Delta 1}_{v,y}$ </td></tr>
     <tr><td>72-73</td><td>the number of new papers mentioning vertices $u$ and $v$, since 2 years prior to y<br>denoted as: $pnew^{\Delta 2}_{u,y}$ , $pnew^{\Delta 2}_{v,y}$ </td></tr>
-    <tr><td>74-75</td><td>the rank of the number of new papers mentioning vertices $u$ and $v$<br>denoted as: $rpnew^{\Delta 1}_{u,y}$ , $rpnew^{\Delta 1}_{v,y}$ </td></tr>
+    <tr><td>74-75</td><td>the rank of the number of new papers mentioning vertices $u$ and $v$, since 1 year prior to y<br>denoted as: $rpnew^{\Delta 1}_{u,y}$ , $rpnew^{\Delta 1}_{v,y}$ </td></tr>
     <tr><td>76-77</td><td>the rank of the number of new papers mentioning vertices $u$ and $v$, since 2 years prior to y<br>denoted as: $rpnew^{\Delta 2}_{u,y}$, $rpnew^{\Delta 2}_{v,y}$ </td></tr>
     <!-- Starting the next 10 rows for the second 'node feature' -->
     <tr>

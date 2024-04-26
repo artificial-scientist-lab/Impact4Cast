@@ -149,8 +149,8 @@
     <tr><td>126-128</td><td>the maximum number of the total citations received by either concept $u$ or $v$ since its frist publication to the year $y$, $y-1$, $y-2$, e.g., max($ct_{u,y}$, $ct_{u,y}$)</td></tr>
     <tr><td>129-131</td><td>the minimum number of total citations received by either concept $u$ or $v$ in the three-year period ending with year $y$, $y-1$, $y-2$, e.g., min($ct^{\Delta 3}_{u,y}$ , $ct^{\Delta 3}_{v,y}$)</td></tr>
     <tr><td>132-134</td><td>the maximum number of total citations received by either concept $u$ or $v$ in the three-year period ending with year $y$, $y-1$, $y-2$, e.g., max($ct^{\Delta 3}_{u,y}$ , $ct^{\Delta 3}_{v,y}$)</td></tr>
-    <tr><td>135-137</td><td>the minimum number of papers mentioning either concept $u$ or $v$, e.g., min($pn_{u,y}$ , $pn_{v,y}$)</td></tr>
-    <tr><td>138-140</td><td>the maximum number of papers mentioning either concept $u$ or $v$, e.g., max($pn_{u,y}$ , $pn_{v,y}$)</td></tr>
+    <tr><td>135-137</td><td>the minimum number of papers mentioning either concept $u$ or $v$, for year $y$, $y-1$, $y-2$; e.g., min($pn_{u,y}$ , $pn_{v,y}$), min($pn_{u,y-1}$ , $pn_{v,y-1}$), min($pn_{u,y-2}$ , $pn_{v,y-2}$)</td></tr> 
+    <tr><td>138-140</td><td>the maximum number of papers mentioning either concept $u$ or $v$, for year $y$, $y-1$, $y-2$; e.g., max($pn_{u,y}$ , $pn_{v,y}$), max($pn_{u,y-1}$ , $pn_{v,y-1}$), max($pn_{u,y-2}$ , $pn_{v,y-2}$)</td></tr>  
 </table>
 
 </details>

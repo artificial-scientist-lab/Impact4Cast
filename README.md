@@ -55,6 +55,7 @@
 .
 ├── prepare_unconnected_pair_solution.ipynb: Find unconnected concept pairs (for training, testing and evaluating)
 ├── prepare_adjacency_pagerank.py: Prepare dynamic knowledge graph and compute properties
+├── prepare_node_pair_citation_data_years.ipynb: Prepare citation data for both individual concept nodes and concept pairs for specific years
 │
 ├──<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/create_dynamic_concepts">create_dynamic_concepts</a>
 │  ├── get_concept_citation.py: Create dynamic concepts from the knowledge graph (concepts carry the time and citation information). 

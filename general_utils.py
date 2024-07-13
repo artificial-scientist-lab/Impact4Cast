@@ -80,7 +80,7 @@ def calculate_plot_ROC(true_labels, nn_outputs, user_parameter, figure_name, sav
 
     Parameters:
     - true_labels: Ground truth binary labels.
-    - nn_outputs: Raw outputs (logits) from the neural network.
+    - nn_outputs: Raw outputs from the neural network.
     - user_parameter: some user parameters whcih are num_class, IR_num, split_type, out_norm; not used here, can be removed
     - figure_name: stored figure name
     - save_figure_folder: the folder to store the figure, which is usually defined from t0_c2_curve created from make_folders()

@@ -1,7 +1,7 @@
 # Forecasting high-impact research topics via machine learning on evolving knowledge graphs
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Paper Availability](https://img.shields.io/badge/paper-available-green)
+[![arXiv](https://img.shields.io/badge/arXiv-2402.08640-b31b1b.svg)](https://arxiv.org/abs/2402.08640)
 
 **Authors:** [**Xuemei Gu**](mailto:xuemei.gu@mpl.mpg.de), [**Mario Krenn**](https://mpl.mpg.de/research-at-mpl/independent-research-groups/krenn-research-group/)
 \

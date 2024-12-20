@@ -170,7 +170,7 @@ One need to download the data at [10.5281/zenodo.14527306](https://doi.org/10.52
 └── other python files: Post-processing, make the Figure 6-8 from the evaluation on different models.
 </pre>
 
-Three examples about 10M evaluation samples (2019-2022) with raw outputs from a neural network trained on 2016-2019 data are for producing Figure 11 in the frp_example folder.
+Three examples about 10M evaluation samples (2019-2022) with raw outputs from a neural network trained on 2016-2019 data (accessible at [10.5281/zenodo.14527306](https://doi.org/10.5281/zenodo.14527306)) are for producing Figure 11 in the fpr_example folder.
 
 
  

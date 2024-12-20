@@ -12,7 +12,8 @@
 <img src="miscellaneous/Impact4Cast.png" alt="workflow" width="700"/>
 
 > [!NOTE]\
-> Full Dynamic Knowledge Graph and Datasets can be downloaded via [zenodo.org](https://zenodo.org/records/10692137)  
+> Full Dynamic Knowledge Graph and Datasets can be downloaded at [10.5281/zenodo.10692137](https://doi.org/10.5281/zenodo.10692137)  
+> Dataset for Benchmark can be downloaded at [10.5281/zenodo.14527306](https://doi.org/10.5281/zenodo.14527306)
 
 ## <a name="ff">Prepare an evolving, citation-augmented knowledge graph</a>
 ### <a name="ff">Creating a list of scientific concepts</a>

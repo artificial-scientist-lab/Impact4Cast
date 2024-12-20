@@ -1,13 +1,13 @@
-# Forecasting high-impact research topics via machine learning on evolving knowledge graphs
+# Impact4Cast
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![arXiv](https://img.shields.io/badge/arXiv-2402.08640-b31b1b.svg)](https://arxiv.org/abs/2402.08640)
 
-**Authors:** [**Xuemei Gu**](mailto:xuemei.gu@mpl.mpg.de), [**Mario Krenn**](https://mpl.mpg.de/research-at-mpl/independent-research-groups/krenn-research-group/)
-\
-**Preprint:** [arXiv:2402.08640](https://arxiv.org/abs/2402.08640)
-
 **Which scientific concepts, that have never been investigated jointly, will lead to the most impactful research?**
+
+📖 <u> Read our paper here: </u>\
+[**Forecasting high-impact research topics via machine learning on evolving knowledge graphs**](https://arxiv.org/abs/2402.08640)\
+*[Xuemei Gu](mailto:xuemei.gu@mpl.mpg.de), [Mario Krenn](mailto:mario.krenn@mpl.mpg.de)*
 
 <img src="miscellaneous/Impact4Cast.png" alt="workflow" width="700"/>
 

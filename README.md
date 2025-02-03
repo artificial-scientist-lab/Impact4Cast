@@ -160,7 +160,7 @@
 
 
 ### <a name="ff">Perform benchmarking</a>
-One need to download the data at [10.5281/zenodo.14527306](https://doi.org/10.5281/zenodo.14527306) and unzip the file in the benchmark_code folder.
+One needs to download the data at [10.5281/zenodo.14527306](https://doi.org/10.5281/zenodo.14527306) and unzip the file in the benchmark_code folder.
 <pre>
 <a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/benchmark_code">benchmark_code</a>
 ├── loops_fcNN.py: fully connected neural network model

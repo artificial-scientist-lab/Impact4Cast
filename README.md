@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![arXiv](https://img.shields.io/badge/arXiv-2402.08640-b31b1b.svg)](https://arxiv.org/abs/2402.08640)
+[![ICML AI4Science](https://img.shields.io/badge/ICML-2024-blue.svg)](https://openreview.net/forum?id=M1nqSqflLT&referrer=%5Bthe%20profile%20of%20Xuemei%20Gu%5D(%2Fprofile%3Fid%3D~Xuemei_Gu1))
 
 **Which scientific concepts, that have never been investigated jointly, will lead to the most impactful research?**
 

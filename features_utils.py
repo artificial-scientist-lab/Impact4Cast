@@ -110,7 +110,7 @@ def get_all_node_feature(adjacency_matrix_list, year, data_folder):
     
     num_neighbors0 = get_num_neighbor(adjacency_matrix0) # the number of neighbors for each vertex in year
     num_neighbors1 = get_num_neighbor(adjacency_matrix1) # the number of neighbors for each vertex in year-1
-    num_neighbors2 = get_num_neighbor(adjacency_matrix2) # the number of neighbors for each vertex in year-1
+    num_neighbors2 = get_num_neighbor(adjacency_matrix2) # the number of neighbors for each vertex in year-2
     
     num_diff_1_year = num_neighbors0 - num_neighbors1 # the number of new neighbors since 1 years prior to y for each vertex
     num_diff_2_year = num_neighbors0 - num_neighbors2 # the number of new neighbors since 2 years prior to y for each vertex

@@ -7,8 +7,9 @@
 **Which scientific concepts, that have never been investigated jointly, will lead to the most impactful research?**
 
 📖 <u> Read our paper here: </u>\
-[**Forecasting high-impact research topics via machine learning on evolving knowledge graphs**](https://arxiv.org/abs/2402.08640)\
-*[Xuemei Gu](mailto:xuemei.gu@mpl.mpg.de), [Mario Krenn](mailto:mario.krenn@mpl.mpg.de)*
+**Forecasting high-impact research topics via machine learning on evolving knowledge graphs**\
+[Xuemei Gu, Mario Krenn, Machine Learning: Science and Technology, **6**(2), 025041 (2025)](https://iopscience.iop.org/article/10.1088/2632-2153/add6ef)
+
 
 <img src="miscellaneous/Impact4Cast.png" alt="workflow" width="700"/>
 

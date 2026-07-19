@@ -64,8 +64,6 @@
 │  ├── get_concept_citation.py: Create dynamic concepts from the knowledge graph (concepts carry the time and citation information). 
 │  ├── merge_concept_citation.py: Combining dynamic concepts files
 │  └── process_concept_to_pandas_frame.py: Post-processing, store the full dynamic concepts
-│  ├── merge_concept_pairs.py: Combining dynamic concepts
-│  └── process_edge_to_pandas_frame.py: Post-processing, store the full dynamic concepts
 │
 └──<a href="https://github.com/artificial-scientist-lab/Impact4Cast/tree/main/prepare_eval_data">prepare_eval_data</a>
    ├── prepare_eval_feature_data.py: Prepare features of knowledge graph (for evaluation dataset)
